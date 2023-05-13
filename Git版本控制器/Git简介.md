@@ -42,6 +42,12 @@ Linus在1991年创建了开源的Linux，在2005年花了两周时间自己用C�
     github平台：
         1.生成ssh
             ssh-keygen -t rsa -C "iwen@iwenwiki.com"
+          删除ssh
+            git remote remove origin
+          查看远程仓库
+            git remote -v
+          添加ssh协议git hub地址
+            git remote add origin git@...
         2.关联github
         3.创建仓库
         4.把本地仓库的代码推送到远程仓库
