@@ -42,7 +42,7 @@ Linus在1991年创建了开源的Linux，在2005年花了两周时间自己用C�
     github平台：
         1.生成ssh
             ssh-keygen -t rsa -C "iwen@iwenwiki.com"
-          删除ssh
+         删除ssh
             git remote remove origin
           查看远程仓库
             git remote -v
@@ -65,9 +65,17 @@ Linus在1991年创建了开源的Linux，在2005年花了两周时间自己用C�
 #### 8.远程仓库的命令：
     git clone url
     git push
+    
     拉取远程代码并自动合并
     git pull
     git pull origin
     git pull origin master --allow-unrelated-histories
     git pull 命令实际上时'git pull'和'git merge'命令的组合，如果只拉取远程代码不合并，使用'git fetch'
+    
+    
+    自动选择本地仓库全部删除的文件，并将修改推送到远程仓库
+    git ls-files --deleted -z | xargs -0 git rm
+    git commit -m "Remove deleted files"
+    git push
+
 
