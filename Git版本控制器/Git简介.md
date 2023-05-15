@@ -65,4 +65,9 @@ Linus在1991年创建了开源的Linux，在2005年花了两周时间自己用C�
 #### 8.远程仓库的命令：
     git clone url
     git push
+    拉取远程代码并自动合并
     git pull
+    git pull origin
+    git pull origin master --allow-unrelated-histories
+    git pull 命令实际上时'git pull'和'git merge'命令的组合，如果只拉取远程代码不合并，使用'git fetch'
+
