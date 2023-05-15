@@ -48,6 +48,8 @@ Linus在1991年创建了开源的Linux，在2005年花了两周时间自己用C�
             git remote -v
           添加ssh协议git hub地址
             git remote add origin git@...
+          更改协议
+            git remote set-url origin git@...
         2.关联github
         3.创建仓库
         4.把本地仓库的代码推送到远程仓库
