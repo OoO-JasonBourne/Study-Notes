@@ -24,7 +24,7 @@ node index.js
 function sayHi(){ \
     console.log("hi"); \
 } \
- \
+ 
 var sayBye = function(){ \
     console.log("bye"); \
 } \
@@ -156,18 +156,18 @@ HTTP 消息头由类似如下的对象表示：
 
 <!-- 引入 -->
 ### server
-var http = require('http');
-var onRequest = function(request, response) {
-    console.log('Request received');
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    // response.write('Hello from out application');
-    var myObj = {
-        name: "itbaizhan",
-        job: "learn",
-        age: 27
-    };
-    response.end(JSON.stringify(myObj));
-}
+var http = require('http'); \
+var onRequest = function(request, response) { \
+    console.log('Request received'); \
+    response.writeHead(200, { 'Content-Type': 'application/json' }); \
+    // response.write('Hello from out application'); \
+    var myObj = { \
+        name: "itbaizhan", \
+        job: "learn", \
+        age: 27 \
+    }; \
+    response.end(JSON.stringify(myObj)); \
+} \
 
 ###### 创建服务器
 var server = http.createServer(onRequest);
