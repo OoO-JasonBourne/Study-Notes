@@ -4,12 +4,12 @@
 
 ## Nodejs简介
 ### 简介
-Node.js 是一个开源与跨平台的 JavaScript 运行时环境,2009年被开发出来.
-Node.js 在浏览器外运行 V8 JavaScript 引擎（Google Chrome 的内核）。
-Node.js 在其标准库中提供了一组**异步的 I/O 原生功能**（用以防止 JavaScript 代码被阻塞）.
-**I/O**（英语：Input/Output），即输入/输出，通常指数据在内部存储器和外部存储器或其他周边设备之间的输入和输出
-当 Node.js 执行 I/O 操作时（例如从网络读取、访问数据库或文件系统），Node.js 会在响应返回时恢复操作，而不是阻塞线程并浪费 CPU 循环等待。
-这使 Node.js 可以在一台服务器上处理数千个并发.
+Node.js 是一个开源与跨平台的 JavaScript 运行时环境,2009年被开发出来. \
+Node.js 在浏览器外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 \
+Node.js 在其标准库中提供了一组**异步的 I/O 原生功能**（用以防止 JavaScript 代码被阻塞）. \
+**I/O**（英语：Input/Output），即输入/输出，通常指数据在内部存储器和外部存储器或其他周边设备之间的输入和输出 \
+当 Node.js 执行 I/O 操作时（例如从网络读取、访问数据库或文件系统），Node.js 会在响应返回时恢复操作，而不是阻塞线程并浪费 CPU 循环等待。 \
+这使 Node.js 可以在一台服务器上处理数千个并发. \
 
 ### 安装与运行
 node index.js
@@ -21,13 +21,13 @@ node index.js
 
 ## 回调函数
 ### 声明式函数
-function sayHi(){
-    console.log("hi");
-}
-
-var sayBye = function(){
-    console.log("bye");
-}
+function sayHi(){ \
+    console.log("hi"); \
+} \
+ \
+var sayBye = function(){ \
+    console.log("bye"); \
+} \
 
 ### 回调函数,可以将函数和值作为参数传递
 var sayHello = function(name){
