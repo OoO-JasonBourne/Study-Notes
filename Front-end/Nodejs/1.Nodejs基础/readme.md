@@ -22,7 +22,7 @@ node index.js
 ## 回调函数
 ### 声明式函数
 function sayHi(){ \
-    console.log("hi"); \
+    console.log("hi"); \           
 } \
  
 var sayBye = function(){ \
