@@ -1,21 +1,36 @@
-#encoding=utf-8
-#类的方式创建线程
+#coding=utf-8
+from socket import *
 from threading import Thread
-from time import sleep
-class MyThread(Thread):
-    def __init__(self,name):
-        Thread.__init__(self)
-        self.name =name
-    def run(self):
-        for i in range(3):
-            print(f"thread:{self.name} :{i}")
-            sleep(1)
+udp_socket=socket(AF_INET,SOCK_DGRAM)
+#绑定接收信息端口
+udp_socket.bind(('127.0.0.1',8989))
+#不停接收
+def recv_data():
+    while True:
+        redata = udp_socket.recvfrom(1024)
+
+
+print(f'收到信息:
+{redata[0].decode("gbk")},
+from
+
+{redata[1]}
+')
+# 不停发送
+
+
+def send_data():
+    while True:
+        data = input('输入信息：')
+        addr = ('127.0.0.1', 8080)
+
+
+udp_socket.sendto(data.encode('gbk'), addr)
 if __name__ == '__main__':
-    print("主线程，start")
-    #创建线程(类的方式)
-    t1 = MyThread('t1')
-    t2 = MyThread('t2')
-    #启动线程
-    t1.start()
+    # 创建两个线程
+    t1 = Thread(target=send_data)
+    t2 = Thread(target=recv_data)
     t2.start()
-    print("主线程，end")
+    t1.start()
+    t1.join()
+    t2.join()
