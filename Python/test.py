@@ -1,36 +1,31 @@
 #coding=utf-8
+'''
+双向通信Socket之服务器端
+       读取客户端发送的数据，将内容输出到控制台
+       将控制台输入的信息发送给客户器端
+'''
+#导入socket模块
 from socket import *
-from threading import Thread
-udp_socket=socket(AF_INET,SOCK_DGRAM)
-#绑定接收信息端口
-udp_socket.bind(('127.0.0.1',8989))
-#不停接收
-def recv_data():
-    while True:
-        redata = udp_socket.recvfrom(1024)
+#创建Socket对象
+tcp_server_socket=socket(AF_INET,SOCK_STREAM)
+#绑定端口
+tcp_server_socket.bind(('', 8888))
 
-
-print(f'收到信息:
-{redata[0].decode("gbk")},
-from
-
-{redata[1]}
-')
-# 不停发送
-
-
-def send_data():
-    while True:
-        data = input('输入信息：')
-        addr = ('127.0.0.1', 8080)
-
-
-udp_socket.sendto(data.encode('gbk'), addr)
-if __name__ == '__main__':
-    # 创建两个线程
-    t1 = Thread(target=send_data)
-    t2 = Thread(target=recv_data)
-    t2.start()
-    t1.start()
-    t1.join()
-    t2.join()
+# 监听客户端的连接
+tcp_server_socket.listen()
+print("服务端已经启动，等待客户端连接！")
+# 接收客户端连接
+tcp_client_socket, host = tcp_server_socket.accept()
+print("一个客户端建立连接成功！")
+while True:
+    # 读取客户端的消息
+    re_data = tcp_client_socket.recv(1024).decode('gbk')
+    # 将消息输出到控制台
+    print('客户端说：' , re_data)
+    if re_data == 'end':
+        break
+    # 获取控制台信息
+    msg = input('>')
+    tcp_client_socket.send(msg.encode('gbk'))
+tcp_client_socket.close()
+tcp_server_socket.close()
