@@ -18,3 +18,12 @@ const arr1 = arr.reduce((prev, cur, index) => {
   return prev;
 }, []);
 console.log(arr1);
+
+
+console.log(arr.toString())
+console.log({name: 'w'}.toString())
+
+function add(a, b){
+  return a + b
+}
+console.log(add(1, 2, 4))
