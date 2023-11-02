@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>迭代器、生成器、promise、 async await</h1>
+
+    <h3>ES6 三大核心：</h3>
+    <p>class</p>
+    <p>promise</p>
+    <p>module</p>
+    
+    <script>
+        // 遍历和迭代的区别
+        // 字符串 - for 循环
+        // 数组 - foreach
+        // 对象 - for ... in ...
+        const arr = [1, 2, 3, 4];
+        const inter = arr[Symbol.iterator]()
+        console.log(inter.next())
+        console.log(inter.next())
+        console.log(inter.next())
+        console.log(inter.next())
+        console.log(inter.next())
+        
+    </script>
+
+</body>
+</html>
