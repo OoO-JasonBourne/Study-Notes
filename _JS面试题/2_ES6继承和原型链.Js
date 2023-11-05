@@ -10,7 +10,7 @@ class Person {
 
 
 class Student extends Person{
-    constructor(name, score){
+    constructor(name, score){ 
         super(name)
         this.score = score;
     }

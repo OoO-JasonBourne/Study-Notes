@@ -38,5 +38,17 @@ for (let i = 0; i < arr.length; i++) {
 console.log(Object.keys(unique))
 
 /**
- * 4. reduce 去重
+ * 4. ES6 Map去重
  */
+const map = new Map()
+const result = []
+
+for (let i = 0; i < arr.length; i++) {
+  if (map.has(arr[i])) {
+    map.set(arr[i], true)
+  } else {
+    map.set(arr[i], false)
+    result.push(arr[i])
+  }
+}
+console.log(result)
