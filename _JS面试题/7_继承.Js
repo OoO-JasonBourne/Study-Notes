@@ -78,39 +78,39 @@ ES6的继承有所不同，实质上是先创建父类的实例对象this，然�
  *       2. 子类实例不能给父类构造函数传参
  */
 
-// // 定义一个父类
-// function Parent(){
-//     this.name = 'xiaoming';
-//     this.friends = ['w', 'm'];
-//     this.getName = () => {
-//         console.log(this.name)
-//     }
-// }
-// Parent.prototype.age = 18;
-// Parent.prototype.getFri = () => {
-//     console.log("父类原型方法")
-// }
-// // 定义子类
-// function Children(){}
+// 定义一个父类
+function Parent(){
+    this.name = 'xiaoming';
+    this.friends = ['w', 'm'];
+    this.getName = () => {
+        console.log(this.name)
+    }
+}
+Parent.prototype.age = 18;
+Parent.prototype.getFri = () => {
+    console.log("父类原型方法")
+}
+// 定义子类
+function Children(){}
 
-// // 子类的原型 等于 父类的实例
-// Children.prototype = new Parent()
+// 子类的原型 等于 父类的实例
+Children.prototype = new Parent()
 
-// const stu1 = new Children()
-// stu1.name = 'xiaohong'
-// stu1.friends.push('e')
-// console.log(stu1.name)
-// console.log(stu1.friends)
-// console.log(stu1.age)
-// stu1.getFri()
+const stu1 = new Children()
+stu1.name = 'xiaohong'
+stu1.friends.push('e')
+console.log(stu1.name)
+console.log(stu1.friends)
+console.log(stu1.age)
+stu1.getFri()
 
-// console.log('---------')
+console.log('---------')
 
-// const stu2 = new Children()
-// // console.log(stu2)
-// console.log(stu2.name)
-// console.log(stu2.friends)
-// stu1.getFri()
+const stu2 = new Children()
+// console.log(stu2)
+console.log(stu2.name)
+console.log(stu2.friends)
+stu1.getFri()
 
 /**
  * 2. 构造函数继承
@@ -264,34 +264,34 @@ ES6的继承有所不同，实质上是先创建父类的实例对象this，然�
 /**
  * ES6 class继承
  */
-class Parent {
-  constructor() {
-    this.name = "ll";
-    this.friends = ["cc", "ww"];
-    this.getFri = function () {
-      console.log(this.friends);
-    };
-  }
-  getPar() {
-    console.log("原型");
-  }
-}
+// class Parent {
+//   constructor() {
+//     this.name = "ll";
+//     this.friends = ["cc", "ww"];
+//     this.getFri = function () {
+//       console.log(this.friends);
+//     };
+//   }
+//   getPar() {
+//     console.log("原型");
+//   }
+// }
 
-class Children1 extends Parent {}
-class Children2 extends Parent {}
+// class Children1 extends Parent {}
+// class Children2 extends Parent {}
 
-const stu1 = new Children1();
-stu1.friends.push('aa')
-console.log(stu1.name);
-console.log(stu1.friends);
-stu1.getFri()
-stu1.getPar()
+// const stu1 = new Children1();
+// stu1.friends.push('aa')
+// console.log(stu1.name);
+// console.log(stu1.friends);
+// stu1.getFri()
+// stu1.getPar()
 
-console.log('-----------')
-const stu2 = new Children2()
-console.log(stu2.name);
-console.log(stu2.friends);
-stu1.getFri()
-stu1.getPar()
+// console.log('-----------')
+// const stu2 = new Children2()
+// console.log(stu2.name);
+// console.log(stu2.friends);
+// stu1.getFri()
+// stu1.getPar()
 
 

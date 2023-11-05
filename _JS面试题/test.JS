@@ -1,29 +1,26 @@
-// 数组排序
+const arr = [1, 2, 1, 2, 'a', 'a']
 
-const arr = [];
-for (let i = 0; i * 2 < 10; i++) {
-  arr.push(i * 2);
-}
-for (let i = 0; i * 2 < 12; i++) {
-  arr.push(i * 2);
-}
-console.log(arr);
+// // indexOf includes,去重
+// const arrN = new Array();
 
-const arr1 = arr.reduce((prev, cur, index) => {
-  //   console.log(Object.prototype.toString.call(prev));
-  //   prev.indexOf(cur) === -1 && prev.push(cur);
-  if (prev.indexOf(cur) === -1) {
-    prev.push(cur);
-  }
-  return prev;
-}, []);
-console.log(arr1);
+// for (let _ of arr) {
+//     // if(arrN.indexOf(_) == -1){
+//     if (!arrN.includes(_)) {
+//         arrN.push(_)
+//     }
+// }
 
 
-console.log(arr.toString())
-console.log({name: 'w'}.toString())
 
-function add(a, b){
-  return a + b
-}
-console.log(add(1, 2, 4))
+// // ES6 Set, map 去重
+// console.log(Array.from(new Set(arr)))
+// console.log([...new Set(arr)])
+
+// console.log(arrN)
+
+// // 键值对去重
+// const unique = {}
+// for(let _ of arr){
+//     unique[_] = true;
+// }
+// console.log(Object.keys(unique))
