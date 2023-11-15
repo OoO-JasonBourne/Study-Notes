@@ -9,7 +9,7 @@ MySQL80 Windows常见错误
 no-beep
 ```
 下面添加
-```
+``` 
 user=root
 password=??
 ```
